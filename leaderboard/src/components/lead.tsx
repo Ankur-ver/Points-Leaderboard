@@ -3,6 +3,14 @@ interface Props {
 }
 
 const Leaderboard = ({ users }: Props) => {
+  if (!users || users.length === 0) {
+  return (
+    <div className="flex flex-col items-center justify-center h-64">
+      <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+      <p className="mt-4 text-white text-lg font-medium">Loading leaderboard...</p>
+    </div>
+  );
+}
   const sortedUsers = [...users].sort((a, b) => b.totalPoints - a.totalPoints);
   console.log("sorted array: ",sortedUsers);
   const top3 = sortedUsers.slice(0, 3);
