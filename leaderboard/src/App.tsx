@@ -18,7 +18,7 @@ const App = () => {
   const [message, setMessage] = useState<string>('');
   //fetchuser from /api
   const fetchUsers = async () => {
-    const res = await axios.get<User[]>('http://localhost:5000/api/users');
+    const res = await axios.get<User[]>('https://points-leaderboard-85fd.onrender.com/api/users');
     //sort on the basis of totalpoints 
     const sorted = res.data.sort((a, b) => b.totalPoints - a.totalPoints);
     setUsers(sorted);
@@ -29,7 +29,7 @@ const App = () => {
   }, []);
   //claim handle through backend api
   const handleClaim = async () => {
-    const res = await axios.post('http://localhost:5000/api/claim-points', { userId: selected });
+    const res = await axios.post('https://points-leaderboard-85fd.onrender.com/claim-points', { userId: selected });
     setMessage(`${res.data.pointsAwarded} points awarded!`);
     setUsers(res.data.leaderboard.sort((a: User, b: User) => b.totalPoints - a.totalPoints));
   };
