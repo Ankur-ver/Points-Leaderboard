@@ -14,7 +14,7 @@ const AddUser = ({ onAdd }: Props) => {
     console.log(name);
     if (!name) return;
     //Add user from backend api
-    await axios.post('http://localhost:5000/api/add-user', { name });
+    await axios.post('https://points-leaderboard-85fd.onrender.com/api/add-user', { name });
     setName('');
     onAdd();
   };
