@@ -22,6 +22,11 @@ A full-stack leaderboard application to track and display top users based on poi
 
 ---
 
+## 📸 Preview
+
+![Leaderboard UI](https://drive.google.com/uc?export=view&id=1ljr0h3IX29dFVFW8y1Snm3Yscx8RooLP)
+
+
 ## 📁 Folder Structure
 Leaderboad/
 ├── client/ # Frontend (React)
